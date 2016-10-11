@@ -1,5 +1,7 @@
 'use strict';
 
+const glob = require('glob');
+
 class PackageIncludes {
     constructor(serverless, options) {
 
@@ -16,6 +18,10 @@ class PackageIncludes {
         // update the excludes to include all files that aren't includes
 
         console.log('do do do');
+
+        glob("**/*.js", options, function (er, files) {
+            console.log(files);
+        });
     }
 }
 

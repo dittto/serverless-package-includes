@@ -3,7 +3,9 @@
   "version": "0.0.1",
   "description": "Adds an includes option to package, so you can package only useful files.",
   "main": "index.js",
-  "devDependencies": {},
+  "dependencies": {
+    "glob": "7.x"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dittto/serverless-package-includes.git"
