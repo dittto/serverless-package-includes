@@ -4,24 +4,20 @@ const glob = require('glob');
 
 class PackageIncludes {
     constructor(serverless, options) {
-
-        console.log(serverless.service.package.include);
+        this.serverless = serverless;
 
         this.hooks = {
-            'before:deploy:createDeploymentArtifacts': this.test.bind(this)
+            'before:deploy:createDeploymentArtifacts': this.addExcludes.bind(this)
         };
     }
 
-    test() {
-        // read all files
+    addExcludes() {
+        let includes = this.serverless.service.package.include;
+        includes = includes.concat(['**/', 'serverless.yml']);
 
-        // update the excludes to include all files that aren't includes
-
-        console.log('do do do');
-
-        glob("**/*.js", options, function (er, files) {
-            console.log(files);
-        });
+        const filenames = glob.sync("**", {matchBase: true, mark: true, ignore: includes});
+        const exclude = this.serverless.service.package.exclude;
+        this.serverless.service.package.exclude = !exclude ? filenames : exclude.concat(filenames);
     }
 }
 
