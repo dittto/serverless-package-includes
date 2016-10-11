@@ -4,7 +4,8 @@
   "description": "Adds an includes option to package, so you can package only useful files.",
   "main": "index.js",
   "dependencies": {
-    "glob": "7.x"
+    "co": "^4.x",
+    "glob": "^7.x"
   },
   "repository": {
     "type": "git",
