@@ -9,6 +9,12 @@ So far, with simple projects, it's been saving approximately 40% of the filesize
 
 ## How to use
 
+First up, add this plugin to your project:
+
+```
+npm install --save dittto/serverless-package-includes
+```
+
 Add the following, or similar, to your `serverless.yml` file:
 
 ```
@@ -16,12 +22,22 @@ package:
   include:
     - '**/*.js'
     - '**/*.json'
-    
+
 plugins:
   - serverless-package-includes
 ```
 
 The above means that only *.js and *.json files in any folder will be included in your zip. No more overly large README.md's, and no project logos!
+
+You can also choose to exclude included files, as the include is applied first, for instance:
+
+```
+package:
+  include:
+    - '**/*.js'
+  exclude:
+    - 'secret.js'
+```
 
 ## TODO
 
