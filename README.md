@@ -16,6 +16,9 @@ package:
   include:
     - '**/*.js'
     - '**/*.json'
+    
+plugins:
+  - serverless-package-includes
 ```
 
 The above means that only *.js and *.json files in any folder will be included in your zip. No more overly large README.md's, and no project logos!
