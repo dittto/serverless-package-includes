@@ -18,8 +18,8 @@ npm install --save dittto/serverless-package-includes
 Add the following, or similar, to your `serverless.yml` file:
 
 ```
-package:
-  include:
+custom:
+  packageInclude:
     - '**/*.js'
     - '**/*.json'
 
@@ -32,9 +32,10 @@ The above means that only *.js and *.json files in any folder will be included i
 You can also choose to exclude included files, as the include is applied first, for instance:
 
 ```
-package:
-  include:
+custom:
+  packageInclude:
     - '**/*.js'
+package:
   exclude:
     - 'secret.js'
 ```
