@@ -12,15 +12,20 @@ class PackageIncludes {
     }
 
     addExcludes(logger) {
+        // get the current excludes
+        let excludes = this.serverless.service.package.exclude;
+        excludes = excludes instanceof Array ? excludes : [];
+
+        // get the includes from the config
         let includes = this.serverless.service.custom.packageInclude;
         includes = includes instanceof Array ? includes.concat(['**/', 'serverless.yml']) : [];
         if (!includes) {
             return logger.log('Ignoring includes as none specified');
         }
 
-        const filenames = glob.sync("**", {matchBase: true, mark: true, ignore: includes});
-        const exclude = this.serverless.service.package.exclude;
-        this.serverless.service.package.exclude = exclude instanceof Array ? exclude.concat(filenames) : filenames;
+        // get filenames that haven't already been excluded and we don't want to include then add them as excluded
+        const filenames = glob.sync("**", {matchBase: true, mark: true, ignore: excludes.concat(includes)});
+        this.serverless.service.package.exclude = excludes.concat(filenames);
 
         logger.log('Including specific files by adding ' + filenames.length + ' files/paths to excludes');
     }
