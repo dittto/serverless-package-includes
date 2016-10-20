@@ -1,6 +1,6 @@
 {
   "name": "serverless-package-includes",
-  "version": "0.0.1",
+  "version": "1.2.0",
   "description": "Adds an includes option to package, so you can package only useful files.",
   "main": "index.js",
   "dependencies": {

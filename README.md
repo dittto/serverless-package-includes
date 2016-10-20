@@ -6,6 +6,7 @@ This plugin allows you to specify a list of filenames that will only be included
 
 So far, with simple projects, it's been saving approximately 40% of the filesize of the zip file.
 
+[![Build Status](https://travis-ci.org/dittto/serverless-package-includes.svg?branch=master)](https://travis-ci.org/dittto/serverless-package-includes)
 
 ## How to use
 
@@ -39,12 +40,6 @@ package:
   exclude:
     - 'secret.js'
 ```
-
-## TODO
-
-- Add linting
-- Setup Travis
-- Publish to NPM
 
 ## Testing
 
