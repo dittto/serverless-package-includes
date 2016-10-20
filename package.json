@@ -20,5 +20,15 @@
     "includes"
   ],
   "author": "Nick Stacey @ditt_to",
-  "license": "ISC"
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dittto/serverless-package-includes/issues"
+  },
+  "homepage": "https://github.com/dittto/serverless-package-includes#readme",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha"
+  }
 }

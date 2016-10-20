@@ -52,5 +52,5 @@ To run test locally, checkout this package and run the following commands:
 
 ```
 npm install
-./node_modules/mocha/bin/mocha
+npm test
 ```
