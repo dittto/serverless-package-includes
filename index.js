@@ -6,12 +6,12 @@ class PackageIncludes {
     constructor(serverless, options) {
         this.serverless = serverless;
 
-        this.hooks = {
-            'before:deploy:createDeploymentArtifacts': this.addExcludes.bind(this, serverless.cli)
+    this.hooks = {
+            'before:deploy:createDeploymentArtifacts': this.addExcludes.bind(this, serverless.cli, glob)
         };
     }
 
-    addExcludes(logger) {
+    addExcludes(logger, glob) {
         // get the current excludes
         let excludes = this.serverless.service.package.exclude;
         excludes = excludes instanceof Array ? excludes : [];
@@ -19,7 +19,7 @@ class PackageIncludes {
         // get the includes from the config
         let includes = this.serverless.service.custom.packageInclude;
         includes = includes instanceof Array ? includes.concat(['**/', 'serverless.yml']) : [];
-        if (!includes) {
+        if (includes.length === 0) {
             return logger.log('Ignoring includes as none specified');
         }
 

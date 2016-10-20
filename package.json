@@ -6,6 +6,10 @@
   "dependencies": {
     "glob": "^7.x"
   },
+  "devDependencies": {
+    "chai": "^3.5",
+    "mocha": "^2.4"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dittto/serverless-package-includes.git"
