@@ -6,7 +6,7 @@ This plugin allows you to specify a list of filenames that will only be included
 
 So far, with simple projects, it's been saving approximately 40% of the filesize of the zip file.
 
-[![Build Status](https://travis-ci.org/dittto/serverless-package-includes.svg?branch=master)](https://travis-ci.org/dittto/serverless-package-includes)
+[![Build Status](https://travis-ci.org/dittto/serverless-package-includes.svg?branch=master)](https://travis-ci.org/dittto/serverless-package-includes) [![Coverage Status](https://coveralls.io/repos/github/dittto/serverless-package-includes/badge.svg)](https://coveralls.io/github/dittto/serverless-package-includes)
 
 ## How to use
 
