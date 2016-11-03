@@ -7,7 +7,8 @@ class PackageIncludes {
         this.serverless = serverless;
 
     this.hooks = {
-            'before:deploy:createDeploymentArtifacts': this.addExcludes.bind(this, serverless.cli, glob)
+            'before:deploy:createDeploymentArtifacts': this.addExcludes.bind(this, serverless.cli, glob),
+            'before:deploy:function:deploy': this.addExcludes.bind(this, serverless.cli, glob)
         };
     }
 
