@@ -43,7 +43,7 @@ describe('serverless_package_includes', function () {
     it('Should init with specified hooks', function () {
         const includes = new PackageIncludes({}, []);
         const hookNames = Object.keys(includes.hooks);
-        expect(hookNames).to.have.same.members(['before:deploy:createDeploymentArtifacts']);
+        expect(hookNames).to.have.same.members(['before:deploy:createDeploymentArtifacts', 'before:deploy:function:deploy']);
     });
 
     it('Handles empty excludes and valid includes', function () {
